@@ -1,9 +1,25 @@
 ---
-title: "Class 4 Visual Analytics"
+title: "First Deliverable"
 output: html_notebook
 ---
 
+#
+```{r}
+#Hello world!
+```
 
+#We Open a dataset from my Personal Repository
+#Notes: I had to save it as csv file because the xlsv file did not show raw URL link
+```{r}
+Lifecheck<-read.csv('https://raw.githubusercontent.com/Sebastian-Wood-Visual-Analytics/guided1/main/LifeExpect_birth.csv')
+```
+
+```{r}
+head(Lifecheck,20) #first twenty values for variable LocaleType
+```
+
+
+#CLASS ON HOW TO DO IT
 ```{r}
 
 ```
