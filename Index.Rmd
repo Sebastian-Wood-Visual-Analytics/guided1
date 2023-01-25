@@ -1,6 +1,8 @@
 ---
 title: "First Deliverable"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 #
@@ -19,8 +21,46 @@ head(Lifecheck,20) #first twenty values for variable LocaleType
 ```
 
 
-#CLASS ON HOW TO DO IT
+#CLASS ON HOW TO DO IT (IMPORTING FROM GITFUB THE EXCEL FILE)
 ```{r}
+#Use the broom escoba click on top right you need everything empty
+#Find the right folder,
+#Got to GitHub and xlsv file and on download buttom right click and copy link address
+link="https://github.com/Sebastian-Wood-Visual-Analytics/guided1/raw/main/LifeExpect_birth.xlsx"
 
+#call library On packages on right box install, and the look for package called rio 
+library(rio)
+
+cia=import(link)
+```
+
+#Generating Plot
+```{r}
+cia80=cia[cia$value>80,]
+cia80
+
+table(cia80$region)
+
+region80tab=as.data.frame(table(cia80$region))
+names(region80tab)=c("region","count")
+region80tab
+```
+
+#Look for the code to plot this Table on Session 2 Class on Canvas
+```{r}
+library(ggplot2)
+base= ggplot(data= region80tab,
+             aes(x = region,
+                 y = count))
+plot1 = base + geom_bar(fill = "gray",
+                      stat = "identity")
+plot1
+
+```
+
+
+
+```{r}
+#Github, #Settings #Pages #Branch chain to main 
 ```
 
